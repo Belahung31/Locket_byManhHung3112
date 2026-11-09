@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="page-title">Locket Gold by Mạnh Hùng</title>
+    <meta name="description" content="Hướng dẫn kích hoạt Locket Gold trên iPhone bằng ShadowRocket với link Config và Module.">
+    <meta name="theme-color" content="#2563eb">
+    <link rel="icon" type="image/png" href="./assets/img/shadowrocket.webp"/>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Feather Icons & Font Awesome -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        .copy-btn:hover {
+            transform: scale(1.05);
+        }
+        .copy-btn:active {
+            transform: scale(0.95);
+        }
+        :root {
+            --all-in-app: #93c5fd; 
+            --all-in-app-strong: #2563eb; 
+            --yellow: #fcd34d; 
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-b from-blue-50 via-white to-white min-h-screen text-gray-900">
+
+    <!-- Decorative Background -->
+    <div class="fixed inset-0 -z-10 overflow-hidden">
+        <div class="absolute -top-24 -left-24 w-80 h-80 rounded-full bg-gradient-to-tr from-blue-200 to-sky-200 blur-3xl opacity-50"></div>
+        <div class="absolute -bottom-28 -right-24 w-96 h-96 rounded-full bg-gradient-to-tr from-sky-200 to-indigo-200 blur-3xl opacity-50"></div>
+        <div class="absolute top-1/3 -right-16 w-64 h-64 rounded-full bg-gradient-to-br from-indigo-200 to-blue-200 blur-3xl opacity-40"></div>
+        <div class="absolute inset-0 opacity-30" style="background-image: radial-gradient(circle at 1px 1px, rgba(37,99,235,0.15) 1px, transparent 0); background-size: 24px 24px;"></div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
+        <div id="toastContent" class="opacity-0 translate-y-2 transition-all duration-300">
+            <div class="pointer-events-none bg-gradient-to-r from-blue-500 to-sky-400 text-black rounded-full px-4 py-2 shadow-xl ring-1 ring-blue-300/60 flex items-center gap-2">
+                <span class="text-lg">✨</span>
+                <span id="toastMessage" class="text-sm font-semibold">Đã sao chép!</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main Content Container -->
+    <div class="relative z-10 max-w-md mx-auto px-4 py-16">
+        <div class="bg-white rounded-2xl p-8 shadow-xl border border-gray-200 flex flex-col gap-6" data-aos="fade-up">
+            
+            <!-- Header -->
+            <div class="text-center mb-2">
+                <div class="mx-auto mb-3 w-12 h-12 rounded-xl flex items-center justify-center" style="background-color: var(--all-in-app)">
+                    <span class="text-2xl">🥨</span>
+                </div>
+                <h1 class="text-3xl font-bold mb-2 text-pink-600">Unlock App <span class="bg-clip-text text-transparent bg-gradient-to-r from-pink-600 to-sky-400">Premium💛</span></h1>
+                <p class="text-gray-600" data-i18n="subtitle"> by Nguyễn Mạnh Hùng <span class="font-semibold"></span></p>
+            </div>
+
+            <!-- Notice -->
+            <div class="rounded-xl p-4 border border-amber-200 bg-amber-50">
+                <div class="flex items-start">
+                    <div class="mt-0.5 mr-3">
+                        <div class="w-6 h-6 rounded-md flex items-center justify-center" style="background-color: var(--yellow)">
+                            <i data-feather="alert-triangle" class="w-4 h-4 text-black"></i>
+                        </div>
+                    </div>
+                    <div class="text-sm text-gray-800">
+                        <p class="font-semibold mb-1" data-i18n="note-title">Lưu ý</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li data-i18n="note-1">Muốn sử dụng Locket Gold thì <span class="font-semibold">phải bật VPN trong ShadowRocket</span>.</li>
+                            <li data-i18n="note-2">Không dùng nữa thì <span class="font-semibold">tắt đi</span> để tránh hao pin và nóng máy.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 1. Module Shadowrocket (Sửa chuẩn Scheme cài đặt Module) -->
+            <div class="bg-gray-50 rounded-xl p-5 border border-gray-200">
+                <h2 class="text-xl font-semibold mb-3 flex items-center text-gray-900">
+                    <i data-feather="layers" class="mr-2"></i>
+                    Module Shadowrocket
+                </h2>
+                <p class="text-sm text-gray-600 mb-4">
+                    All In One - Module dành cho Shadowrocket.
+                </p>
+                <a href="shadowrocket://install?module=https%3A%2F%2Fraw.githubusercontent.com%2FBelahung31%2FLocket_ManhHung%2Frefs%2Fheads%2Fmain%2Fmodules%2FAll_In_One.sgmodule"
+                   class="w-full bg-gradient-to-r from-blue-500 to-sky-400 hover:from-blue-600 hover:to-sky-500 text-white font-semibold py-3 px-4 rounded-lg transition-all inline-flex items-center justify-center gap-2">
+                    <i data-feather="download" class="w-5 h-5"></i>
+                    Mở Module
+                </a>
+            </div>
+
+            <!-- 2. Config Shadowrocket (Sửa chuẩn Scheme thêm Config) -->
+            <div class="bg-gray-50 rounded-xl p-5 border border-gray-200">
+                <h2 class="text-xl font-semibold mb-3 flex items-center text-gray-900">
+                    <i data-feather="settings" class="mr-2"></i>
+                    Config Shadowrocket
+                </h2>
+                <p class="text-sm text-gray-600 mb-4">
+                    All In One - File cấu hình định dạng CONF.
+                </p>
+                <a href="https://raw.githubusercontent.com/Belahung31/Locket_byManhHung3112/refs/heads/main/Modules/All_In_One.conf"
+                   class="w-full bg-gradient-to-r from-indigo-500 to-blue-500 hover:from-indigo-600 hover:to-blue-600 text-white font-semibold py-3 px-4 rounded-lg transition-all inline-flex items-center justify-center gap-2">
+                    <i data-feather="file-text" class="w-5 h-5"></i>
+                    Mở Config
+                </a>
+            </div>
+
+            <!-- 3. Config duy trì Locket Gold -->
+            <div class="bg-gray-50 rounded-xl p-5 border border-gray-200">  
+                <h2 class="text-xl font-semibold mb-3 flex items-center text-gray-900">  
+                    <i data-feather="heart" class="mr-2 text-pink-500"></i> <span data-i18n="locket-cfg-title">Config duy trì Locket Gold</span>  
+                </h2>  
+                <p class="text-sm text-gray-600 mb-4" data-i18n="locket-cfg-desc">Cài đặt Config này sau khi đã kích hoạt Locket Gold thành công.</p>  
+                <a href="assets/Locket.mobileconfig" download class="w-full bg-gradient-to-r from-amber-400 to-yellow-300 hover:from-amber-500 hover:to-yellow-400 text-black font-semibold py-3 px-4 rounded-lg transition-all inline-flex items-center justify-center gap-2 shadow-sm">  
+                    <i data-feather="settings" class="w-5 h-5"></i>  
+                    <span data-i18n="btn-install-cfg">Cài đặt Config</span>  
+                </a>  
+            </div>
+
+            <!-- 4. Khối Mạng xã hội -->
+            <div class="bg-gray-50 rounded-xl p-5 border border-gray-200">
+                <h3 class="text-center font-semibold text-gray-700 mb-4 text-sm uppercase tracking-wider">Liên hệ & Theo dõi Admin</h3>
+                <div class="flex flex-col gap-3">
+                    <a href="https://www.instagram.com/mahn.huwg/" target="_blank" rel="noopener noreferrer" 
+                       class="w-full flex items-center justify-center gap-3 p-3 rounded-xl bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 text-white font-medium shadow transition-all hover:scale-102 active:scale-95">
+                        <i class="fa-brands fa-instagram text-xl"></i>
+                        <span>Instagram</span>
+                    </a>
+
+                    <a href="https://www.tiktok.com/@mahnhuwg" target="_blank" rel="noopener noreferrer" 
+                       class="w-full flex items-center justify-center gap-3 p-3 rounded-xl bg-black text-white font-medium shadow transition-all hover:scale-102 active:scale-95">
+                        <i class="fa-brands fa-tiktok text-xl"></i>
+                        <span>TikTok</span>
+                    </a>
+
+                    <a href="https://www.facebook.com/mahn.huwg207?locale=vi_VN" target="_blank" rel="noopener noreferrer" 
+                       class="w-full flex items-center justify-center gap-3 p-3 rounded-xl bg-blue-600 text-white font-medium shadow transition-all hover:scale-102 active:scale-95">
+                        <i class="fa-brands fa-facebook-f text-xl"></i>
+                        <span>Facebook</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 5. Khối Lận đận & Admin -->
+            <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-5 border border-purple-200 flex flex-col gap-3 text-center">
+                <p class="text-sm text-purple-700 font-medium" data-i18n="gl-msg">
+                    Lận đận nên không cho ai danh phận
+                </p>
+                <div class="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold py-3 px-4 rounded-xl shadow-md flex items-center justify-center gap-2">
+                    <i data-feather="message-circle" class="w-5 h-5"></i>
+                    <span>Admin: Mạnh Hùng</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Copyright Footer -->
+    <div class="relative z-10 max-w-md mx-auto px-4 pb-6">
+        <div class="text-center text-sm text-gray-500">
+            © <span id="currentYear">2026</span> <a href="https://www.facebook.com/mahn.huwg207?locale=vi_VN" target="_blank" class="text-blue-600 hover:text-blue-700 hover:underline">Nguyễn Mạnh Hùng</a>. All rights reserved.
+        </div>
+    </div>
+
+    <!-- Core JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            try {
+                if (typeof AOS !== 'undefined') AOS.init();
+                if (typeof feather !== 'undefined') feather.replace();
+            } catch (e) {
+                console.error("Lỗi khởi tạo thư viện:", e);
+            }
+
+            const yearEl = document.getElementById('currentYear');
+            if (yearEl) yearEl.textContent = new Date().getFullYear();
+        });
+
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                showToast('Đã sao chép thành công!');
+            }).catch(err => {
+                console.error('Lỗi khi sao chép: ', err);
+            });
+        }
+
+        let __toastTimer;
+        function showToast(message) {
+            var content = document.getElementById('toastContent');
+            var textEl = document.getElementById('toastMessage');
+            if (!content || !textEl) return;
+            textEl.textContent = message;
+            content.classList.remove('opacity-0', 'translate-y-2');
+            content.classList.add('opacity-100', 'translate-y-0');
+            if (__toastTimer) clearTimeout(__toastTimer);
+            __toastTimer = setTimeout(function() {
+                content.classList.add('opacity-0', 'translate-y-2');
+                content.classList.remove('opacity-100', 'translate-y-0');
+            }, 1800);
+        }
+    </script>
+</body>
+</html>
