@@ -1,6 +1,4 @@
 // ============================================================
-// Locket Remote Config Rewrite
-// Generated from Locket_Unlock.json
 // ============================================================
 
 var ua = $request.headers["User-Agent"] || $request.headers["user-agent"] || "";
